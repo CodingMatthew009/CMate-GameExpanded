@@ -1,6 +1,4 @@
 #include "Include/CMate-GameExtended.h"
-#include "CMate-Core/Include/CMate-Core.h"
-
 
 #include <thread>
 
@@ -10,6 +8,15 @@ using namespace cmate::core::mathf;
 
 int main(void)
 {
+    SDManager* sd_manager = &SDManager::Instance();
+
+    SET_LOGS_FOLDER("/home/mate/Projects/CMate-Expanded/logs"); // KEEP AT THE TOP, some internal logs may break
+
+    //Initiating savefile
+    sd_manager->SetSaveFile("/home/mate/Projects/CMate-Expanded/Save_File.odt");
+    sd_manager->ClearSaveFile();
+
+
     Noise::WhiteNoise myWhiteNoise(500, 100, true); // Also computed on the CPU but much less work
     Noise::ValueNoise myValueNoise(500, 512, 40, true); // Use carefully, computed on the CPU!!
     Noise::PerlinNoise myPerlinNoise(500, 512, 50, true);
@@ -17,10 +24,10 @@ int main(void)
 
     LOG("-------------Initialized CMate-GameExpanded-------------", cmate::core::LFlags::INFO);
 
-    myWhiteNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/white_noise.bmp"); // Must be a .bmp file
-    myValueNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/value_noise.bmp"); // Must be a .bmp file
-    myPerlinNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/perlin_noise.bmp"); // Must be a .bmp file
-    myVoronoiNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/voronoi_noise.bmp"); // Must be a .bmp file
+    myWhiteNoise.SaveAsImage("/home/mate/Projects/CMate-Expanded/white_noise.bmp"); // Must be a .bmp file
+    myValueNoise.SaveAsImage("/home/mate/Projects/CMate-Expanded/value_noise.bmp"); // Must be a .bmp file
+    myPerlinNoise.SaveAsImage("/home/mate/Projects/CMate-Expanded/perlin_noise.bmp"); // Must be a .bmp file
+    myVoronoiNoise.SaveAsImage("/home/mate/Projects/CMate-Expanded/voronoi_noise.bmp"); // Must be a .bmp file
 
     int rand_int = Random::iRange(1, 100);
     int rand_int_seed = Random::iRangeS(1, 100, 412);
