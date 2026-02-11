@@ -1,0 +1,13 @@
+# Files
+*.odt
+*.bmp
+*.o
+*.bin
+Sandbox
+.clangd
+
+
+#Folders
+logs/
+.vscode/
+
