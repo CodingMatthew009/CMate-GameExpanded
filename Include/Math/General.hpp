@@ -5,7 +5,7 @@
 
 #include "Vector2.hpp"
 
-#include "Random.hpp"
+#include "../../CMate-Core/Include/CMate-Core.h"
 
 namespace cmate::core::mathf
 {

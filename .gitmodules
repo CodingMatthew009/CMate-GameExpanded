@@ -1,0 +1,3 @@
+[submodule "CMate-Core"]
+	path = CMate-Core
+	url = git@github.com:CodingMatthew009/CMate-Core.git

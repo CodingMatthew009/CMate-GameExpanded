@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../../Imager.hpp"
+#include "../../../CMate-Core/Include/CMate-Core.h"
 #include "../Vector2.hpp"
-#include "../Random.hpp"
 
 #include <vector>
 #include <cmath>
