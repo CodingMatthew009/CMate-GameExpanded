@@ -2,7 +2,6 @@
 
 #include <cmath>
 #include <algorithm>
-
 #include "Vector2.hpp"
 
 #include "../../CMate-Core/Include/CMate-Core.h"

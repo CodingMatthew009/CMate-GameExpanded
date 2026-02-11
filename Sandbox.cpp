@@ -1,12 +1,6 @@
-
+#include "Include/CMate-GameExtended.h"
 #include "CMate-Core/Include/CMate-Core.h"
 
-#include "Include/Math/Vector2.hpp"
-
-#include "Include/Math/ProceduralNoise/WhiteNoise.hpp"
-#include "Include/Math/ProceduralNoise/ValueNoise.hpp"
-#include "Include/Math/ProceduralNoise/PerlinNoise.hpp"
-#include "Include/Math/ProceduralNoise/VoronoiNoise.hpp"
 
 #include <thread>
 
@@ -21,7 +15,7 @@ int main(void)
     Noise::PerlinNoise myPerlinNoise(500, 512, 50, true);
     Noise::VoronoiNoise myVoronoiNoise(500, 512, 20, true);
 
-    LOG("-------------Initialized CMate-Core-------------", cmate::core::LFlags::INFO);
+    LOG("-------------Initialized CMate-GameExpanded-------------", cmate::core::LFlags::INFO);
 
     myWhiteNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/white_noise.bmp"); // Must be a .bmp file
     myValueNoise.SaveAsImage("/home/mate/Projects/Mate-Utils/value_noise.bmp"); // Must be a .bmp file

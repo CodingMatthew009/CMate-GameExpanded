@@ -2,6 +2,7 @@
 
 #include "Vector3.hpp"
 #include "General.hpp"
+#include "../../CMate-Core/Include/CMate-Core.h"
 
 namespace cmate::core::mathf
 {
