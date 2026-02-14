@@ -35,7 +35,7 @@ namespace cmate::core::Noise
                             {
                                 Vector2 b = Vector2(double(i), double(j));
                                 Vector2 r = b - fract_coords + hash(floored_pos + b, seed);
-                                res += 0.1/pow(Vector2::dot(r, r), 8.0);
+                                res += 1.0/pow(Vector2::dot(r, r), 8.0);
                             }
                         }
                         
