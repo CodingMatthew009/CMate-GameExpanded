@@ -1,4 +1,4 @@
-# CMate-Core [GE] [0.2.5]
+# CMate-Core [GE] [0.1.1]
 Original CMate-Core Lib expanded with GameDev based Features
 -------------------------------------------------------------------------------------------------------------
 

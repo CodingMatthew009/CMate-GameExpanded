@@ -9,6 +9,7 @@
 namespace cmate::core
 {
     class Imager; //Forward decleration of Imager
+    class Image; // Forward decleration of Image
 
     namespace Interfaces {
         class INoise
@@ -20,26 +21,14 @@ namespace cmate::core
                     return seed;
                 }
 
-                double GetValue(int pos_x, int pos_y)
-                {
-                    return value_map[pos_x][pos_y];
-                }
-
-                void SaveAsImage(std::string path)
-                {
-                    Imager::ValuesToBitmap(value_map, path);
-                }
-
-                void SaveAsImage(const char* path)
-                {
-                    Imager::ValuesToBitmap(value_map, path);
-                }
+                virtual Image GetImage() = 0;
 
             protected:
                 int seed;
+                unsigned int width;
+                unsigned int height;
 
-                std::vector<std::vector<double>> value_map;
-
+                std::vector<double> value_map;
         };
     }  
 

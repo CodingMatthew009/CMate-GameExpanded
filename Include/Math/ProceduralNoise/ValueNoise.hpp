@@ -17,8 +17,6 @@ namespace cmate::core::Noise
             {
                 for (int c = 0; c < pixel_size; c++)
                 {
-                    std::vector<double> collumn;
-
                     for (int p = 0; p < pixel_size; p++)
                     {
                         double noise_x = (c / ((double)pixel_size - 1)) * (double)noise_size;
@@ -37,16 +35,21 @@ namespace cmate::core::Noise
 
                         double value = std::lerp(std::lerp(a, b, interpolated_vector.x), std::lerp(c_, d, interpolated_vector.x), interpolated_vector.y);
 
-                        collumn.push_back(value);       
+                        this->value_map.push_back(value);       
                     }
-
-                    value_map.push_back(collumn);
                 }
+                width = pixel_size;
+                height = pixel_size;
 
                 if (log_gen_time)
                 {
                     LOG("Generation of Value Noise Completed", LFlags::INFO);
                 }
+            }
+
+            Image GetImage() override
+            {
+                return Image::ValueMapToImage(value_map, width);
             }
     };
 }
